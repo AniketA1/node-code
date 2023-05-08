@@ -9,7 +9,7 @@
 
     - name: start node
       shell: 
-        chdir: /home/ubuntu/my-app/
+        chdir: /home/ubuntu/
         cmd: /bin/bash startnode.sh
       become: yes
 
