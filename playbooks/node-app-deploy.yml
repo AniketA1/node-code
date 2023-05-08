@@ -1,20 +1,11 @@
-- hosts: node-server
+- hosts: all
   become: yes
   tasks:
     - name: copy built files to deploy-server
-      synchronize:
-        src: '/var/lib/jenkins/workspace/node assignment/build/'
-        dest: /home/ubuntu/my-app/
-        delete: true
-        recursive: true
-
-    - name: change-owner
-      file:
-        path: /home/ubuntu/my-app/
-        owner: ubuntu
-        group: ubuntu
-        recurse: yes
-        state: directory
+      copy:
+        src: '/var/lib/jenkins/workspace/node_test/build/'
+        dest: /home/ubuntu/
+        
 
     - name: start node
       shell: 
