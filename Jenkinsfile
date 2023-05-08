@@ -7,7 +7,6 @@ pipeline{
         stage("build") {
 
             steps {
-            echo "building the application"
             sh 'npm i'
             sh 'npm run build'
             }
@@ -15,13 +14,12 @@ pipeline{
         }
 
 
-        stage("deploying") {
+        stage("Deploy") {
 
             steps {
-            echo "deploying the application using ansible-playbook"
-	sh '''
-	ansible-playbook playbooks/node-app-deploy.yml --key-file '/var/lib/jenkins/id_rsa'
-	'''
+     
+	sh " ansible-playbook playbooks/node-app-deploy.yml --key-file '/var/lib/jenkins/id_rsa' "
+	
 
             }
 
