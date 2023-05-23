@@ -1,6 +1,6 @@
 #!/bin/bash
 
 set -e
-cd /home/ubuntu/myapp/
+cd /home/ubuntu/
 /usr/bin/pm2 start
 echo "Code ApplicationStart event script ran."
